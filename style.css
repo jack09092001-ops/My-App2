@@ -1,0 +1,388 @@
+:root {
+  --color-bg: #f4f6f8;
+  --color-card: #ffffff;
+  --color-border: #e0e4e8;
+  --color-text: #1f2933;
+  --color-muted: #6b7684;
+  --color-primary: #2f6fed;
+  --color-primary-dark: #1f52b8;
+  --color-danger: #d64545;
+  --color-error: #d64545;
+  --color-success: #2fa84f;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+header {
+  padding: 20px 16px 8px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 8px 16px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.card h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 4px;
+}
+
+input[type="date"],
+input[type="month"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--color-text);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 0.82rem;
+  margin: 4px 0 0;
+  min-height: 1em;
+}
+
+.hint {
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  margin: 4px 0 0;
+  font-style: italic;
+}
+
+.preview {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  margin: 0 0 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#submit-btn {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+#submit-btn:hover {
+  background: var(--color-primary-dark);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+button.secondary:hover {
+  background: var(--color-bg);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Records list */
+.day-group {
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px 0;
+}
+
+.day-group:last-child {
+  border-bottom: none;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.day-header .day-total {
+  font-weight: 400;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+}
+
+.record-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 0.95rem;
+}
+
+.record-info {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.record-info .type-label {
+  min-width: 4.5em;
+}
+
+.record-info .amount {
+  color: var(--color-text);
+}
+
+.record-info .kcal {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.record-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.record-actions button {
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-weight: 400;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+}
+
+.record-actions button:hover {
+  background: var(--color-bg);
+}
+
+.record-actions button.delete-btn:hover {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.empty-state {
+  color: var(--color-muted);
+  text-align: center;
+  padding: 24px 0;
+  font-size: 0.95rem;
+}
+
+/* Weekly goal card */
+.week-range {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 10px;
+}
+
+.goal-progress-track {
+  background: var(--color-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 22px;
+  border: 1px solid var(--color-border);
+}
+
+.goal-progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 8px 0 0 8px;
+  min-width: 2px;
+  transition: width 0.3s ease;
+}
+
+.goal-progress-track.goal-met .goal-progress-fill {
+  background: var(--color-success);
+  border-radius: 8px;
+}
+
+.goal-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 6px;
+}
+
+/* Monthly summary */
+.month-field {
+  max-width: 220px;
+}
+
+.subsection-title {
+  margin: 18px 0 8px;
+  font-size: 1rem;
+}
+
+.chart-note {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  margin: 0 0 10px;
+}
+
+.bar-chart.weekly .bar-label {
+  width: 7.5em;
+}
+
+.bar-track.goal-track {
+  position: relative;
+  overflow: visible;
+}
+
+.goal-marker {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 0;
+  border-left: 2px dashed var(--color-muted);
+}
+
+.bar-fill.goal-met {
+  background: var(--color-success);
+}
+
+.weight-trend-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 6px;
+}
+
+.weight-trend-line {
+  stroke: var(--color-primary);
+  stroke-width: 2;
+}
+
+.weight-point {
+  fill: var(--color-primary);
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+.weight-axis-label {
+  font-size: 10px;
+  fill: var(--color-muted);
+  dominant-baseline: middle;
+}
+
+table.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+}
+
+table.summary-table th,
+table.summary-table td {
+  text-align: left;
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.92rem;
+}
+
+table.summary-table th {
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+table.summary-table tr.total-row td {
+  font-weight: 700;
+  border-bottom: none;
+  border-top: 2px solid var(--color-border);
+}
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.bar-row .bar-label {
+  width: 4.5em;
+  flex-shrink: 0;
+  color: var(--color-muted);
+}
+
+.bar-track {
+  flex: 1;
+  background: var(--color-bg);
+  border-radius: 4px;
+  overflow: hidden;
+  height: 16px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 4px;
+  min-width: 2px;
+}
+
+.bar-row .bar-value {
+  width: 5em;
+  flex-shrink: 0;
+  text-align: right;
+  color: var(--color-muted);
+}

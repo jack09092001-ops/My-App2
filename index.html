@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>運動紀錄</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#2f6fed">
+</head>
+<body>
+  <header>
+    <h1>運動紀錄</h1>
+  </header>
+
+  <main>
+    <section class="card" id="form-section">
+      <h2 id="form-title">新增紀錄</h2>
+      <form id="record-form" novalidate>
+        <input type="hidden" id="record-id" value="">
+
+        <div class="field">
+          <label for="date">日期</label>
+          <input type="date" id="date" required>
+          <p class="error" id="error-date"></p>
+        </div>
+
+        <div class="field">
+          <label for="weight">體重 (kg)</label>
+          <input type="number" id="weight" min="0" step="0.1" placeholder="請輸入體重" required>
+          <p class="hint" id="weight-hint"></p>
+          <p class="error" id="error-weight"></p>
+        </div>
+
+        <div class="field">
+          <label for="type">運動類型</label>
+          <select id="type" required></select>
+        </div>
+
+        <div class="field">
+          <label for="amount">數量 (<span id="unit-label"></span>)</label>
+          <input type="number" id="amount" min="0" step="any" placeholder="請輸入數量">
+          <p class="error" id="error-amount"></p>
+        </div>
+
+        <p class="preview" id="calorie-preview"></p>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn">儲存</button>
+          <button type="button" id="cancel-btn" class="secondary hidden">取消</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card" id="list-section">
+      <h2>每日紀錄</h2>
+      <div id="records-list"></div>
+    </section>
+
+    <section class="card" id="weekly-goal-section">
+      <h2>本週目標</h2>
+      <div id="weekly-goal-content"></div>
+    </section>
+
+    <section class="card" id="summary-section">
+      <h2>月度總結</h2>
+      <div class="field month-field">
+        <label for="month-picker">選擇月份</label>
+        <input type="month" id="month-picker">
+      </div>
+      <div id="summary-content"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
